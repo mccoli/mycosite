@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Olivia McCallum">
+        <title>final</title>
+        <style>
+            div {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center
+            }
+            p {
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%)
+            }
+            .text-overlay {
+                font-size: 50px;
+                position: absolute;
+                color: seashell;
+                padding: 20px;
+                z-index: 9999;
+            }
+        </style>
+
+        <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+        <script src="addons/jquery-3.6.3.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+
+        <script type="importmap">
+        {
+            "imports": {
+            "three": "https://unpkg.com/three@v0.153.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@v0.153.0/examples/jsm/"
+            }
+        }
+        </script>
+    </head>
+    <body style="font-family: 'Montserrat', sans-serif;">
+        <div><p class="text-overlay">zoom out</p></div>
+        
+
+        <audio controls autoplay loop style="display: none;">
+            <source src="../sounds/Forest_Ambience.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>
+
+        <script>
+            $(window).on('load', function() {
+                // animating the opacity to fade in/out each element
+            $(".text-overlay").delay(2500).animate({
+                        opacity: 0
+                    }, 2500);
+            });
+        </script>
+
+        <!-- noise function from https://jsfiddle.net/prisoner849/n1emstwd/ -->
+        <script>
+            let simpleNoise = `
+          float N (vec2 st) { // https://thebookofshaders.com/10/
+              return fract( sin( dot( st.xy, vec2(12.9898,78.233 ) ) ) *  43758.5453123);
+          }
+          
+          float smoothNoise( vec2 ip ){ // https://www.youtube.com/watch?v=zXsWftRdsvU
+              vec2 lv = fract( ip );
+            vec2 id = floor( ip );
+            
+            lv = lv * lv * ( 3. - 2. * lv );
+            
+            float bl = N( id );
+            float br = N( id + vec2( 1, 0 ));
+            float b = mix( bl, br, lv.x );
+            
+            float tl = N( id + vec2( 0, 1 ));
+            float tr = N( id + vec2( 1, 1 ));
+            float t = mix( tl, tr, lv.x );
+            
+            return mix( b, t, lv.y );
+          }
+        `;
+        </script>
+        <script type="module" src="addons/main.js"></script>
+    </body>
+</html>

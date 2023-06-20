@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Olivia McCallum">
+        <script src="addons/p5.js"></script>
+        <script src="addons/datafield.js"></script>
+        <title>datafield</title>
+    </head>
+    <body style="font-family: 'Lucida Sans', sans-serif;">
+        
+        <a href="index.html">home</a>
+        <a href="documentation.html">documentation</a>
+        <a href="research.html">research</a>
+
+        <h1>datafield</h1>
+        <p>I collected data from the language of fungi study by Andrew Adamatzky (2022). In it there are a series of figures depicting the electrical spikes recorded. I used WebPlotDigitizer as planned and mapped the datapoints, ending up with 121 of them. I then wrote a python script to convert this to a json format and send it to my sketch. I think this overcomplicated things slightly and I could have saved time by copy-pasting, but the code is reusable and may be useful if I gather a larger amount of data.</p>
+        <img src="img/figure-2.png" style="width: 400px">
+        <img src="img/all-data.png" style="width: 400px">
+        <img src="img/clean-data.png" style="width: 400px">
+        <img src="img/read-csv-py.png" style="width: 600px">
+        <img src="img/data-list-py.png" style="width: 600px">
+
+        <p>This sketch was built on top of the simplified flowfield. I added a function to the particles to change colour, and within the draw loop checked if the data[i] was above a certain amount. If it was, I would trigger the colour change function for particle[i]. Once this was working I tried to play with the aesthetics of the piece by adding a third dimension and a camera. It's very rudimentary but I think I should go further with the 3D aspect, maybe with the three.js library instead of continuing to use p5.js.</p>
+
+        <img src="img/red-data.png" style="width: 600px">
+        <img src="img/cube-data.png" style="width: 600px">
+        <img src="img/particle-lines.png" style="width: 600px">
+        <p>In this sketch I played with the paths the particles were taking. If I was able to create curves to visualise the vectors in a smoother way, it could have been visually effective.</p>
+        
+    </body>
+</html>

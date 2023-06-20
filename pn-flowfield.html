@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Olivia McCallum">
+        <script src="addons/p5.js"></script>
+        <script src="addons/pn-flowfield.js"></script>
+        <title>flowfield</title>
+    </head>
+    <body style="font-family: 'Lucida Sans', sans-serif;">
+        
+        <a href="index.html">home</a>
+        <a href="documentation.html">documentation</a>
+        <a href="research.html">research</a>
+
+        <h1>perlin noise flowfield</h1>
+        <a href="simple-flowfield.html">simplified ver.</a>
+        <p>The basis of this code came from a video by Daniel Shiffman creating <a href="https://www.youtube.com/watch?v=BjoM9oKOAKY&ab_channel=TheCodingTrain">a Perlin noise flowfield</a>. Perlin noise is a noise function created by Ken Perlin. He developed it for the original Tron movie and won an Academy Award for it. Unlike pure randomness, Perlin noise gives a sequence of numbers that are more related, so the differences between each iteration are a lot smaller. This helps produce more organic outputs like terrains and clouds. This is why I thought it would be useful for creating the vector field that I had tried to create previously with pixel processing.</p>
+        
+        <div id="flow-container"></div>
+        <p>As you can see above there is a flowfield successfully rendering but I couldn't figure out how to drop pixels onto the canvas. I still think the field looks interesting, like blades of grass blowing in the breeze. I could maybe use the Flowfield class in another way. Nevertheless, this led me to further research where I found someone had implemented the same thing but in a much simpler way (the link at the top of the page).</p>
+        <img src="img/allgreen.png" style="width: 400px">
+        <p>This is a pretty version where I didn't refresh the background for every frame.</p>
+
+        <img src="img/class-particle.png" style="width: 500px; height: 1000px">
+        <img src="img/class-flowfield.png" style="width: 500px; height: 1000px">
+        <p>why no work</p>
+        
+    </body>
+</html>

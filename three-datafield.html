@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Olivia McCallum">
+        <title>3datafield</title>
+
+    </head>
+    <body style="font-family: 'Lucida Sans', sans-serif;">
+
+        <a href="index.html">home</a>
+        <a href="documentation.html">documentation</a>
+        <a href="research.html">research</a>
+
+        <h1 style="color: orange;">3js datafield</h1>
+        <p>I decided to go forward with putting the datafield made with p5.js into a 3D space, and hopefully implement better interactivity. I did this using three.js. I had never used this library before so it was a steep learning curve, but I enjoyed the process, despite thinking there are more developments I could have made.</p>
+        
+        <p>I started out by following a very helpful tutorial by Daniel Waldow, explaining how to create your <a href="https://medium.com/nerd-for-tech/getting-started-with-your-first-three-js-project-part-two-the-build-3fd9a2f21418">first three.js project</a>. This helped me get to grips with meshes, geometries, a scene, and a camera.</p>
+        <img src="img/first-boxmesh.png" style="width: 400px">
+        <p>After setting up lights and axes, I tried to instantiate my particles but ended up with them in a few strange positions. It was here I struggled with the coordinate system and the scale of different objects in the scene.</p>
+        <img src="img/particle-orbit.png" style="width: 400px">
+        <img src="img/particle-onbox.png" style="width: 400px">
+        <img src="img/particle-box.png" style="width: 400px">
+        
+        <p> Eventually I turned my box mesh into a room for the particles to inhabit. I wanted to treat this as the walls like I had done in previous sketches. Then I could actually make the flowfield grid for the particles to move along and also add collision detection.</p>
+        <img src="img/boxfull-particles.png" style="width: 400px">
+        <p>Once the particles were moving around the flowfield, I changed the room mesh to a cylinder to be similar to the tubular shape of plant roots. I also started thinking about the sketch as a sort of terrarium, and considered adding abstract plant shapes to communicate more clearly what the work is about.</p>
+        <img src="img/cylinderfull-particles.png" style="width: 400px">
+
+        <p>After this I started to add the data visualisation aspect of the idea. I used the same logic of particles changing colour if at their index the data was higher than the threshold. I also attemped to add collision detection with the walls, but could not get it to work along the z-axis.</p>
+        <img src="img/data-collision.png" style="width: 400px">
+
+        <p>I changed the colour scheme to something more appealing by altering the light values. I had stored them in an array previously and so it was a quick process.</p>
+        <img src="img/colourscheme.png" style="width: 400px">
+        <img src="img/colour-cylinder.png" style="width: 400px">
+
+        <p>To try and add more clarity to the ideas behind the sketch, I sourced sounds from <a href="https://opengameart.org/">OpenGameArt.org</a>. I found different sounds with a twinkling effect but went with a Forest Ambience mp3 by Rick Hoppmann for the 29th Ludum Dare (a game jam competition). Through this process I learnt that Chrome and some other browsers <a href="https://developer.chrome.com/blog/autoplay/">do not allow autoplay</a> to improve the user experience, and so I added a fix that resumed the audio after a user gesture (that I could hide later).</p>
+        <img src="img/sound-play.png" style="width: 400px">
+
+        <p>I still felt dissatisfied with how abstract the piece was, and so I added a simple instanced grass implementation by <a href="https://jsfiddle.net/felixmariotto/hvrg721n/">Felix Mariotto</a> and user <a href="https://jsfiddle.net/prisoner849/n1emstwd/">prisoner849</a> that I modified to my purposes. It ended up being more complicated than expected due to my lack of experience with plane geometries and three.js in general. It was my first use of instanced meshes and I realised too late that it would have been a much easier way to create and control my particles.</p>
+        <img src="img/grass-square.png" style="width: 400px">
+        <img src="img/grass-tube.png" style="width: 400px">
+        <img src="img/grass-orbit.png" style="width: 400px">
+        <img src="img/grass-hat.png" style="width: 400px">
+        <p>examples of me misunderstanding plane geometry 3-4 times</p>
+
+        <h2 style="color: orange;">final thoughts</h2>
+        <p>Throughout this project I challenged myself by learning new equations, new processes, and new forms of visualisation. In trying to capture the seemingly magical nature of mycorrhizal networks, I think I lost the concrete principles of data visualisation. Despite my final outcome being interactive and aesthetically pleasing, I do not think I was able to effectively convey a story about mycellium and electricity with the piece. I am happy with the technical aspects of the project, but believe I could have taken it further by making the breach-of-threshold concept more clear. I could have had text on the screen explaining the amount of voltage, and relating it the amount of particles that change colour. By choosing to create the final outcome in 3D with a library I wasn't comfortable with, I sacrificed a lot of time just to make things work. However, I am grateful I got the opportunity to develop these skills and hope to continue development on this project in the future.</p>
+    </body>
+</html>
