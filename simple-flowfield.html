@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Olivia McCallum">
+        <script src="addons/p5.js"></script>
+        <script src="addons/simple-flowfield.js"></script>
+        <title>simplified</title>
+    </head>
+    <body style="font-family: 'Lucida Sans', sans-serif;">
+        
+        <a href="index.html">home</a>
+        <a href="documentation.html">documentation</a>
+        <a href="research.html">research</a>
+
+        <h1>simplified flowfield</h1>
+        <a href="pn-flowfield.html">complicated ver.</a>
+        <p>This version was also based on the idea from Daniel Shiffman, but authored by Hirnschall Sebastian, then further modified by me.</p>
+        <img src="img/flowfield0.png" style="width: 600px">
+        <p>The flowfield concept is the same but Sebastian was able to add particles as a function called every draw loop. The velocity is determined by sine, cosine and noise.</p>
+        <p>The main difference from my implementation is that this flowfield is static, but changes on every reload due to the noise function. I think this is okay since my data is also static. The next step would be to introduce the colour changing particles idea - a particle lights up if on its iteration, the datapoint at that index is above a certain amount.</p>
+        
+    </body>
+</html>

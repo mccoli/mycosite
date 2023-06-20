@@ -10,11 +10,8 @@
 <body style="color:black; font-family: 'Lucida Sans', sans-serif;">
 
     <a href="index.html">home</a>
-    <h1>the process</h1>
-       
-    <h2>introduction</h2>
-    <p>**insert intro info here**</p>
-
+    <h1 style="color:orange">the process</h1>
+      
     <h3>initial ideas</h3>
     <p>Below is my formative assignment presentation. It details my two first ideas and how I would go about realising them. After receiving feedback I'm deciding to go forward with the Arduino project: visualising electrical signals sent by fungi to communicate with each other.</p> 
     <p>Since I'm focusing on the web in another class, I want to challenge myself by using a medium I haven't had much time to play with. I'm expecting the circuitry to be simple but the data processing to be difficult because of my inexperience.</p>
@@ -36,9 +33,25 @@
     <h3>planning</h3>
     <p>Using <a href="https://automeris.io/WebPlotDigitizer/">WebPlotDigitizer</a> I can extract numerical data from graphs showing spikes in electrical activity of studied fungi over time. Then I need to find some way to map this data onto HIGH, LOW values when writing to the LEDS. Once I see the ranges in the numerical data I can decide on how those ranges translate into 1s and 0s. I'll start with a signal LED at first and then increase the number of them and the complexity</p>
 
+    <h3>changing ideas</h3>
+    <p>After starting tests using Arduino I realised I would prefer to create something digital instead of physical. You cannot read CSV files directly into an Arduino program, so there are a few different ways I could try getting my data onto an Arduino. Writing a script in Processing or Python that converts the CSV file to an array, then sends it over serial communication is one way. Or I could use an SD card and the Arduino SD library and load the data like that. Since there are so many steps involved in this process there are also many opportunities for things to go wrong. This led to me to wanting to create a visualiser for a website; it's a medium I am more experienced in and given time constraints I think more appropriate for me in this module.</p>
+    <img src="img/csv2led.png" style="width:500px" alt="Arduino code that makes an LED blink on and off and reads data over Serial communication.">
+
+    <p>I still want to retain the aesthetic of my previous idea, an artistic imitation of fungi and their communications, but instead by creating an animation on this website.</p>
+
     <h3>experimenting</h3>
+    <p>For this <a href="initial-test.html">initial test</a> I just wanted to understand the logistics of loading data and processing it with javaScript. It draws a differently coloured circle representing each of the 4 chemicals found within a genome (A, C, G, T), depending on if it shows up within the string. In my javaScript sketch I made a note to myself to design a shape for the pattern of circles to follow, which I expand on in my next test.</p>
 
-    <h3>fabricating</h3>
+    <p>In this <a href="vector-field.html">vector field test</a> I'm essentially trying to trace the patterned lines found on images of oyster mushrooms and use the lines as paths for a vector field animation.</p>
 
+    <p>miscellaneous tests:</p>
+    <ul>
+      <li><a href="lorenz.html">lorenz</a></li>
+      <li><a href="tinkerbell.html">tinkerbell</a></li>
+      <li><a href="pn-flowfield.html">perlin noise flowfield</a></li>
+      <li><a href="simple-flowfield.html">simplified flowfield</a></li>
+      <li><a href="datafield.html">datafield</a></li>
+      <li><a href="three-datafield.html">final evaluation of three js datafield</a></li>
+    </ul>
 </body>
 </html>
